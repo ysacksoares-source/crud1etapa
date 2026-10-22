@@ -1,0 +1,66 @@
+nome_produto = ""
+preco = 0.0
+quantidade = 0
+produto_cadastrado = False
+
+opcao = 0
+
+while opcao != 5:
+    print("1 - Cadastrar produto")
+    print("2 - Visualizar produto")
+    print("3 - Atualizar produto")
+    print("4 - Excluir produto")
+    print("5 - Sair")
+
+    opcao = int(input("Escolha uma opcao: "))
+
+
+    if opcao == 1:
+        if produto_cadastrado == False:
+            nome_produto = input("Nome do produto: ")
+            preco = float(input("Preco do produto: R$ "))
+            quantidade = int(input("Quantidade em estoque: "))
+
+            produto_cadastrado = True
+            print("Produto cadastrado com sucesso!")
+        else:
+            print("Ja existe um produto cadastrado.")
+
+ 
+    elif opcao == 2:
+        if produto_cadastrado == True:
+            print("\n--- Produto anunciado ---")
+            print("Produto:", nome_produto)
+            print("Preco: R$", preco)
+            print("Estoque:", quantidade)
+        else:
+            print("Nenhum produto cadastrado.")
+
+ 
+    elif opcao == 3:
+        if produto_cadastrado == True:
+            nome_produto = input("Novo nome do produto: ")
+            preco = float(input("Novo preco: R$ "))
+            quantidade = int(input("Nova quantidade: "))
+
+            print("Produto atualizado com sucesso!")
+        else:
+            print("Cadastre um produto primeiro.")
+
+
+    elif opcao == 4:
+        if produto_cadastrado == True:
+            nome_produto = ""
+            preco = 0.0
+            quantidade = 0
+            produto_cadastrado = False
+
+            print("Produto excluido")
+            print("Nao existe produto para excluir.")
+
+ 
+    elif opcao == 5:
+        print("Obrigado por utilizar o aplicativo")
+
+    else:
+        print("Opcao invalida!")
